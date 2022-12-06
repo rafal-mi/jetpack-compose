@@ -14,7 +14,7 @@ fun TopBar(title: String = "", buttonIcon: ImageVector, onButtonClicked: () -> U
         },
         navigationIcon = {
             IconButton(onClick = { onButtonClicked() } ) {
-                Icon(buttonIcon, contentDescription = "")
+                Icon(buttonIcon, contentDescription = "Hamburger Icon")
             }
         },
         backgroundColor = MaterialTheme.colors.primaryVariant

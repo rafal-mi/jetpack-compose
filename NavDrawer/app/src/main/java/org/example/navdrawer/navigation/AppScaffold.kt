@@ -20,7 +20,7 @@ fun AppScaffold() {
         mutableStateOf<Screen>(Screen.Home)
     }
 
-    var topBar : @Composable () -> Unit = {
+    val topBar : @Composable () -> Unit = {
 
         Log.i(TAG, "Top bar composes with current screen $currentScreen")
 
@@ -55,7 +55,9 @@ fun AppScaffold() {
                 }
             }
         }
-    ) { innerPadding ->
+    ) { paddingValues ->
+        Log.i(TAG, "Scaffold padding values are $paddingValues")
+
         NavigationHost(navController = navController)
     }
 
