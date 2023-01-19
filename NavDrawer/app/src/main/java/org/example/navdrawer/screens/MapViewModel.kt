@@ -21,14 +21,15 @@ class MapViewModel @Inject constructor(
     private val mapRepository: MapRepository,
     private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
-    var collecting: Boolean by savedStateHandle.saveable {
+    private var _collecting: Boolean by savedStateHandle.saveable {
         mutableStateOf(false)
     }
-
-    fun setCollectingState(v: Boolean) {
-        collecting = v
-        mapRepository.collecting.value = v
-    }
+    var collecting: Boolean
+        get() = _collecting
+        set(v) {
+            _collecting = v
+            mapRepository.collecting.value = v
+        }
 
     init {
         Log.i(TAG, "In MapViewModel.init, this is $this, savedStateHandle is $savedStateHandle")

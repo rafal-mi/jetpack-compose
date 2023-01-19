@@ -39,7 +39,8 @@ fun MapScreenContent(viewModel: MapViewModel) {
                 checked = viewModel.collecting,
                 onCheckedChange = {
                     // viewModel.collecting = it
-                    viewModel.setCollectingState(it)
+                    // viewModel.setCollectingState(it)
+                    viewModel.collecting = it
                 }
             )
 
