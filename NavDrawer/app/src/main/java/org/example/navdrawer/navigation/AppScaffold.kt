@@ -46,8 +46,11 @@ fun AppScaffold() {
                     scaffoldState.drawerState.close()
                 }
                 navController.navigate(route) {
-                    popUpTo(navController.graph.startDestinationId)
+                    popUpTo(navController.graph.startDestinationId) {
+                        // saveState = true
+                    }
                     launchSingleTop = true
+                    // restoreState = true
                 }
                 val screen = screens.find { it.route == route }
                 screen?.let {
