@@ -1,7 +1,7 @@
 package org.example.navdrawer.di
 
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import org.example.navdrawer.repository.MapRepository
@@ -10,11 +10,11 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
+abstract class RepositoryModule {
 
-//    @Provides
-//    @Singleton
-//    fun provideMapRepository(): MapRepository {
-//        return MapRepositoryImpl()
-//    }
+    @Binds
+    @Singleton
+    abstract fun bindMapRepository(
+        mapRepositoryImpl: MapRepositoryImpl
+    ): MapRepository
 }
