@@ -32,7 +32,9 @@ class MapViewModel @Inject constructor(
         }
 
     init {
-        Log.i(TAG, "In MapViewModel.init, this is $this, savedStateHandle is $savedStateHandle")
+        Log.i(TAG, "In MapViewModel.init, this is $this")
+        Log.i(TAG, "In MapViewModel.init, savedStateHandle is $savedStateHandle")
+        Log.i(TAG, "In MapViewModel.init, mapRepository is $mapRepository")
 
         collecting = mapRepository.collecting.value
     }
