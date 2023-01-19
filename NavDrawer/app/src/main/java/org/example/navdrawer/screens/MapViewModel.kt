@@ -9,11 +9,16 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.SavedStateHandleSaveableApi
 import androidx.lifecycle.viewmodel.compose.saveable
+import dagger.hilt.android.lifecycle.HiltViewModel
 import org.example.navdrawer.App
 import org.example.navdrawer.App.Companion.TAG
+import org.example.navdrawer.repository.MapRepository
+import javax.inject.Inject
 
 @OptIn(SavedStateHandleSaveableApi::class)
-class MapViewModel(
+@HiltViewModel
+class MapViewModel @Inject constructor(
+    private val mapRepository: MapRepository,
     private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
     var collecting: Boolean by savedStateHandle.saveable {
@@ -22,14 +27,13 @@ class MapViewModel(
 
     fun setCollectingState(v: Boolean) {
         collecting = v
-        App.instance.mapRepository.collecting.value = v
+        mapRepository.collecting.value = v
     }
 
     init {
         Log.i(TAG, "In MapViewModel.init, this is $this, savedStateHandle is $savedStateHandle")
 
-        val repository = App.instance.mapRepository
-        collecting = repository.collecting.value
+        collecting = mapRepository.collecting.value
     }
 
     override fun onCleared() {

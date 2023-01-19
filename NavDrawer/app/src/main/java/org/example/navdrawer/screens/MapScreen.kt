@@ -11,12 +11,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.example.navdrawer.App.Companion.TAG
 
 @Composable
 fun MapScreen() {
-    val viewModel: MapViewModel = viewModel()
+    val viewModel: MapViewModel = hiltViewModel()
 
     Log.d(TAG, "Composing MapScreen, collecting == ${viewModel.collecting}")
 

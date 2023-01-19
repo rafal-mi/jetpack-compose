@@ -1,12 +1,14 @@
 package org.example.navdrawer
 
 import android.app.Application
-import org.example.navdrawer.repository.MapRepository
+import dagger.hilt.android.HiltAndroidApp
+import org.example.navdrawer.repository.MapRepositoryImpl
 
+@HiltAndroidApp
 class App : Application() {
 
-    val mapRepository: MapRepository by lazy {
-        MapRepository()
+    val mapRepository: MapRepositoryImpl by lazy {
+        MapRepositoryImpl()
     }
 
     override fun onCreate() {

@@ -1,7 +1,7 @@
 package org.example.navdrawer.repository
 
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.MutableState
 
-class MapRepository {
-    var collecting = mutableStateOf(false)
+interface MapRepository {
+    val collecting: MutableState<Boolean>
 }
