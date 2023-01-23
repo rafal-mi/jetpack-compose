@@ -27,9 +27,11 @@ fun SetupNavGraph(
             arguments = listOf(
                 navArgument(name = DETAIL_ARGUMENT_KEY) {
                     type = NavType.IntType
+                    defaultValue = 0
                 },
                 navArgument(name = DETAIL_ARGUMENT_KEY2) {
                     type = NavType.StringType
+                    defaultValue = "Stevdza-San"
                 }
             )
         ) {
