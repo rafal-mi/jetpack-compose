@@ -40,6 +40,7 @@ fun AppScaffold() {
             topBar()
         },
         scaffoldState = scaffoldState,
+        drawerGesturesEnabled = scaffoldState.drawerState.isOpen,
         drawerContent = {
             Drawer { route ->
                 scope.launch {
