@@ -37,14 +37,14 @@ fun StaticRow() {
             StaticRowItem(
                 modifier = Modifier
                     .fillMaxHeight()
-                    .fillMaxWidth(0.33f)
+                    .fillMaxWidth(0.333f)
                 ,
                 textCount = 1
             )
             StaticRowItem(
                 modifier = Modifier
                     .fillMaxHeight()
-                    .fillMaxWidth(0.67f)
+                    .fillMaxWidth()
                 ,
                 textCount = 2
             )
@@ -56,14 +56,16 @@ fun StaticRow() {
 @Composable
 fun StaticRowItem(modifier: Modifier = Modifier, textCount: Int) {
     Surface(
-        modifier = modifier,
+        modifier = modifier
+            .fillMaxWidth(),
         color = Color(0xFF469597),
         shape = RoundedCornerShape(12.dp)
     ) {
         Column(
             verticalArrangement = Arrangement.spacedBy(12.dp),
             modifier = Modifier
-                .padding(0.dp)
+                // .padding(0.dp)
+                .fillMaxWidth()
         ) {
             repeat(textCount) {
                 Text(
