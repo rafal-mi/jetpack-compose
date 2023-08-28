@@ -127,7 +127,9 @@ class Triangle {
 
 
         // Draw the triangle
-        GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount)
+        // See https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/drawArrays
+        //   for the first parameter
+        GLES20.glDrawArrays(GLES20.GL_LINE_LOOP, 0, vertexCount)
 
         // Disable vertex array
         GLES20.glDisableVertexAttribArray(positionHandle)

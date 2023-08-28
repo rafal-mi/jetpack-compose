@@ -3,6 +3,7 @@ package com.example.navdrawerback
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.*
@@ -48,7 +49,7 @@ fun AppScaffold() {
     val currentScreen by viewModel.currentScreen.observeAsState()
 
     if (scaffoldState.drawerState.isOpen) {
-        BackPressHandler {
+        BackHandler /*BackPressHandler*/ {
             scope.launch {
                 scaffoldState.drawerState.close()
             }
