@@ -41,8 +41,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainContent() {
-
-    Column(modifier =Modifier.fillMaxSize()) {
+    Column(modifier = Modifier.fillMaxSize()) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -52,26 +51,13 @@ fun MainContent() {
             contentAlignment = Alignment.TopCenter
         ) {
             Column() {
-                Text(text = "Example", fontSize = 44.sp)
+                Text(text = "OpenGL in Compose", fontSize = 32.sp)
             }
         }
-//        Box(
-//            modifier = Modifier
-//                .fillMaxWidth()
-//                .background(Red)
-//                .weight(1f)
-//                .padding(8.dp),
-//            contentAlignment = Alignment.Center
-//        ){
-//            Column {
-//
-//                Text(text = "Example", textAlign = TextAlign.End, color = DarkGray, fontSize = 12.sp)
-//            }
-//        }
         AndroidView(
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(1f),
+                .weight(3f),
             factory = {
                 GLSurfaceView(it).apply {
                     setEGLContextClientVersion(2)
